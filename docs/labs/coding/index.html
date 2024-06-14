@@ -171,6 +171,14 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../home_schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../home_contents.html"> 
+<span class="menu-text">Contents</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../home_program.html"> 
 <span class="menu-text">Program</span></a>
   </li>  
@@ -189,6 +197,11 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link" href="../../home_about.html"> 
 <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/NBISweden/raukr-2024"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -224,7 +237,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">28-Jan-2024</p>
+        <p class="date">12-Jun-2024</p>
       </div>
     </div>
     
@@ -254,8 +267,8 @@ window.Quarto = {
   <li><a href="#task-computing-variance." id="toc-task-computing-variance." class="nav-link" data-scroll-target="#task-computing-variance."><span class="header-section-number">2.1</span> Task: Computing Variance.</a></li>
   <li><a href="#task-writing-a-wrapper-function." id="toc-task-writing-a-wrapper-function." class="nav-link" data-scroll-target="#task-writing-a-wrapper-function."><span class="header-section-number">2.2</span> Task: Writing a Wrapper Function.</a></li>
   <li><a href="#task-customizing-plot." id="toc-task-customizing-plot." class="nav-link" data-scroll-target="#task-customizing-plot."><span class="header-section-number">2.3</span> Task: Customizing <code>plot</code>.</a></li>
-  <li><a href="#task-adding-arguments-to-a-function." id="toc-task-adding-arguments-to-a-function." class="nav-link" data-scroll-target="#task-adding-arguments-to-a-function."><span class="header-section-number">2.4</span> Task: Adding Arguments to a Function.</a></li>
-  <li><a href="#task-using-options." id="toc-task-using-options." class="nav-link" data-scroll-target="#task-using-options."><span class="header-section-number">2.5</span> Task: Using <code>options</code>.</a></li>
+  <li><a href="#bonus-task-adding-arguments-to-a-function." id="toc-bonus-task-adding-arguments-to-a-function." class="nav-link" data-scroll-target="#bonus-task-adding-arguments-to-a-function."><span class="header-section-number">2.4</span> Bonus task: Adding Arguments to a Function.</a></li>
+  <li><a href="#bonus-task-using-options." id="toc-bonus-task-using-options." class="nav-link" data-scroll-target="#bonus-task-using-options."><span class="header-section-number">2.5</span> Bonus task: Using <code>options</code>.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -278,7 +291,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The objective of this lab is to improve your coding skills by focusing on coding style, code benchmarking and optimization. Below, you will find a number of tasks connected to the topics covered in the <em>Best Coding Practices</em> lecture. Some tasks extend lectures content and require you to find some more information online. Please, note that while we are providing example solutions to many tasks, these are only <strong>examples</strong>. If you solve a task in a different way it does not matter your solution is wrong. In fact, it may be better than our solution. If in doubt, ask PI for help. We are here for you!</p>
+<p>The objective of this lab is to improve your coding skills by focusing on coding style, code benchmarking and optimization. Below, you will find a number of tasks connected to the topics covered in the <em>Best Coding Practices</em> lecture. Some tasks extend lectures content and require you to find some more information online. Please, note that while we are providing example solutions to many tasks, these are only <strong>examples</strong>. If you solve a task in a different way it does not matter your solution is wrong. In fact, it may be better than our solution. If in doubt, ask a TA for help. We are here for you!</p>
 </div>
 </div>
 <section id="coding-style" class="level2" data-number="1">
@@ -413,7 +426,11 @@ Example Solution
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>.my_months <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">rev</span>(month.abb)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If we do not know the length of the vector</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>.my_months <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">rev</span>(month.abb)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>.my_months <span class="ot">&lt;-</span> month.abb[(<span class="fu">length</span>(month.abb)<span class="sc">-</span><span class="dv">2</span>)<span class="sc">:</span><span class="fu">length</span>(month.abb)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -637,8 +654,8 @@ Example Solution
 </div>
 </div>
 </section>
-<section id="task-adding-arguments-to-a-function." class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="task-adding-arguments-to-a-function."><span class="header-section-number">2.4</span> Task: Adding Arguments to a Function.</h3>
+<section id="bonus-task-adding-arguments-to-a-function." class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="bonus-task-adding-arguments-to-a-function."><span class="header-section-number">2.4</span> Bonus task: Adding Arguments to a Function.</h3>
 <p>What if you want to pass some additional parameters to a function and, sadly, the authors forgot to add <code>...</code> to the list of function arguments. There is a way out – you can bind extra arguments supplied as <code>alist</code> structure to the original function arguments retrieved by <code>formals</code>. Try to fix the function below, so that the call <code>red_plot(1, 1, col = 'red', pch = 19)</code> will result in points being represented by red circles. Do use <code>alist</code> and <code>formals</code> and do not edit the <code>red_plot</code> itself!</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -684,8 +701,8 @@ Example Solution
 </div>
 </div>
 </section>
-<section id="task-using-options." class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="task-using-options."><span class="header-section-number">2.5</span> Task: Using <code>options</code>.</h3>
+<section id="bonus-task-using-options." class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="bonus-task-using-options."><span class="header-section-number">2.5</span> Bonus task: Using <code>options</code>.</h3>
 <p>Use <code>options</code> to change the default prompt in R to <code>hello :-) &gt;</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">

@@ -145,6 +145,14 @@ background-size: cover;
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../home_schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../home_contents.html"> 
+<span class="menu-text">Contents</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../home_program.html"> 
 <span class="menu-text">Program</span></a>
   </li>  
@@ -163,6 +171,11 @@ background-size: cover;
   <li class="nav-item">
     <a class="nav-link" href="../../home_about.html"> 
 <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/NBISweden/raukr-2024"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -198,7 +211,7 @@ background-size: cover;
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">20-Feb-2024</p>
+        <p class="date">12-Jun-2024</p>
       </div>
     </div>
     
@@ -590,7 +603,7 @@ Tip
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">parse_integer</span>(vec1)</span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">parse_integer</span>(<span class="fu">as.integer</span>(vec1)) <span class="co"># Is it the best way? Hint: rounding.</span></span>
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">parse_double</span>(vec2, <span class="at">na =</span> <span class="st">'?'</span>, <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">decimal_mark =</span> <span class="st">','</span>))</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">parse_number</span>(vec2, <span class="at">na =</span> <span class="st">'?'</span>, <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">decimal_mark =</span> <span class="st">','</span>))</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">parse_number</span>(vec3, <span class="at">na =</span> <span class="st">'?'</span>, <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">decimal_mark =</span> <span class="st">'.'</span>))</span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="fu">guess_parser</span>(vec4)</span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="fu">parse_guess</span>(vec4)</span>
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Yes, you can:</span></span>
@@ -1475,7 +1488,7 @@ strict &lt;- F</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-68-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" data-glightbox="description: .lightbox-desc-8" title="Red – only one species in the current OTU, blue – identification above the threshold, grey – identification below the threshold"><img src="index_files/figure-html/unnamed-chunk-68-1.png" class="img-fluid figure-img" width="864" alt="Red – only one species in the current OTU, blue – identification above the threshold, grey – identification below the threshold"></a></p>
+<p><a href="index_files/figure-html/unnamed-chunk-68-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8" title="Red – only one species in the current OTU, blue – identification above the threshold, grey – identification below the threshold"><img src="index_files/figure-html/unnamed-chunk-68-1.png" class="img-fluid figure-img" width="864" alt="Red – only one species in the current OTU, blue – identification above the threshold, grey – identification below the threshold"></a></p>
 <figcaption>Red – only one species in the current OTU, blue – identification above the threshold, grey – identification below the threshold</figcaption>
 </figure>
 </div>
@@ -1896,7 +1909,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

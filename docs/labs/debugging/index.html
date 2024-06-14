@@ -171,6 +171,14 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../home_schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../home_contents.html"> 
+<span class="menu-text">Contents</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../home_program.html"> 
 <span class="menu-text">Program</span></a>
   </li>  
@@ -189,6 +197,11 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link" href="../../home_about.html"> 
 <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/NBISweden/raukr-2024"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -224,7 +237,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">27-Jun-2023</p>
+        <p class="date">12-Jun-2024</p>
       </div>
     </div>
     
@@ -494,12 +507,13 @@ Example Solution
 </section>
 <section id="task-microbenchmarking." class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="task-microbenchmarking."><span class="header-section-number">2.3</span> Task: Microbenchmarking.</h3>
-<p>While <code>system.time</code> might be sufficient most of the time, there is also an excellent package <code>microbenchmark</code> that enables more accurate time profiling, aiming at microsecond resolution that most of modern operating systems offer. Most of the benchmarking the <code>microbenchmark</code> does is implemented in low-overhead C functions and also the package makes sure to:</p>
+<p>While <code>system.time</code> might be sufficient most of the time, there is also a package <code>microbenchmark</code> that enables more accurate time profiling, aiming at microsecond resolution that most of modern operating systems offer. Most of the benchmarking the <code>microbenchmark</code> does is implemented in low-overhead C functions and also the package makes sure to:</p>
 <ul>
 <li>estimate granularity and resolution of timing for your particular OS,</li>
 <li>warm up your processor before measuring, i.e.&nbsp;wake the processor up from any idle state or likewise.</li>
 </ul>
 <p>Begin by installing the <code>microbenchmark</code> package.</p>
+<p>NOTE! We have noticed that for, e.g.&nbsp;M1 and M2 architectures on newer MacBooks it does not work well!</p>
 <section id="checking-system-time." class="level4" data-number="2.3.1">
 <h4 data-number="2.3.1" class="anchored" data-anchor-id="checking-system-time."><span class="header-section-number">2.3.1</span> Checking System Time.</h4>
 <p>Check the current value of the platform’s timer.</p>
@@ -719,10 +733,14 @@ Example Solution
 <span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(M)</span>
 <span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>summary <span class="ot">&lt;-</span> <span class="fu">summaryRprof</span>(<span class="st">'profiler_test_fillers.out'</span>, <span class="at">memory=</span><span class="st">'both'</span>)</span>
-<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>summary<span class="sc">$</span>by.self</span>
-<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a><span class="co"># answers to the remaining questions are not given</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of profiling one function: fill_noloop</span></span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a><span class="fu">Rprof</span>(<span class="at">memory.profiling =</span> T)</span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a><span class="fu">fill_noloop</span>(<span class="dv">10000</span>, <span class="fu">c</span>(<span class="dv">9</span><span class="sc">:</span><span class="dv">0</span>), <span class="at">seed =</span> <span class="dv">100</span>)</span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a><span class="fu">Rprof</span>(<span class="cn">NULL</span>)</span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>summary <span class="ot">&lt;-</span> <span class="fu">summaryRprof</span>(<span class="st">'Rprof.out'</span>, <span class="at">memory=</span><span class="st">'both'</span>)</span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>summary<span class="sc">$</span>by.self</span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a><span class="co"># answers to the remaining questions are not given here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
