@@ -1,0 +1,20 @@
+name: raukr-reticulate
+channels:
+  - bioconda
+  - conda-forge
+  - pytorch
+dependencies:
+  - python==3.12.0
+  - biopython
+  - pytorch
+  - transformers
+  - r-base==4.3.2
+  - r-rmarkdown==2.25
+  - r-reticulate
+  - r-ggplot2
+  - r-knitr
+  - r-dplyr
+  - r-tibble
+  - r-purrr
+  - pandas==2.2.1
+  - sqlalchemy==2.0.30
